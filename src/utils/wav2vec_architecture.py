@@ -45,9 +45,9 @@ class ContextNetwork(nn.Module):
         
         # Set default values from paper
         if kernels is None:
-            kernels = 9* [3]
+            kernels = 9 * [3]
         if strides is None:
-            strides = 9* [1]
+            strides = 9 * [1]
         
         self.input_layer = nn.Conv1d(in_channels=1, out_channels=CONV_CHANNELS, kernel_size=kernels[0], stride=strides[0])   
         self.conv_layers = [nn.Conv1d(in_channels=CONV_CHANNELS, out_channels=CONV_CHANNELS, kernel_size=ks, stride=s) for ks, s in zip(kernels[1:], strides[1:])]
